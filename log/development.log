@@ -18654,3 +18654,475 @@ Processing by CoursesController#index as HTML
 Completed 200 OK in 742ms (Views: 721.0ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/courses" for 10.0.2.2 at 2019-12-01 21:49:19 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:5
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/index.html.erb within layouts/application (3.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 654ms (Views: 642.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses" for 10.0.2.2 at 2019-12-01 21:50:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:5
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/index.html.erb within layouts/application (4.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 615ms (Views: 600.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 21:50:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 604ms (Views: 584.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/instructor/courses/3" for 10.0.2.2 at 2019-12-01 21:50:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Instructor::CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/instructor/courses_controller.rb:32
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/instructor/courses_controller.rb:25
+  Rendering instructor/courses/show.html.erb within layouts/application
+  Rendered instructor/courses/show.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for #<ImageUploader:0x00007fc4c60954b0>
+Did you mean?  to_xml):
+    29: <br />
+    30: <div class="booyah-box col-10 offset-1">
+    31:   <h1 class="text-center"><%= current_course.title %></h1>
+    32:   <%= image_tag current_course.image, class: 'img-fluid' %>
+    33: 
+    34:   <div class="text-center">
+    35:     <!-- Button trigger modal -->
+  
+app/views/instructor/courses/show.html.erb:32:in `_app_views_instructor_courses_show_html_erb___921894571454731868_70241556479800'
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 21:50:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 714ms (Views: 697.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/courses" for 10.0.2.2 at 2019-12-01 21:50:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:5
+  [1m[36mCourse Load (0.5ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/index.html.erb within layouts/application (4.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 633ms (Views: 618.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses" for 10.0.2.2 at 2019-12-01 21:53:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:5
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 618ms (Views: 605.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 21:53:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 623ms (Views: 602.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/instructor/courses/3" for 10.0.2.2 at 2019-12-01 21:53:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Instructor::CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/instructor/courses_controller.rb:32
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/instructor/courses_controller.rb:25
+  Rendering instructor/courses/show.html.erb within layouts/application
+  Rendered instructor/courses/show.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for #<ImageUploader:0x00007fc4c5a1a130>
+Did you mean?  to_xml):
+    29: <br />
+    30: <div class="booyah-box col-10 offset-1">
+    31:   <h1 class="text-center"><%= current_course.title %></h1>
+    32:   <%= image_tag current_course.image, class: 'img-fluid' %>
+    33: 
+    34:   <div class="text-center">
+    35:     <!-- Button trigger modal -->
+  
+app/views/instructor/courses/show.html.erb:32:in `_app_views_instructor_courses_show_html_erb___921894571454731868_70241553439800'
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 21:53:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 640ms (Views: 620.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/courses" for 10.0.2.2 at 2019-12-01 21:53:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:5
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/index.html.erb within layouts/application (3.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 605ms (Views: 584.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 21:56:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.1ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 688ms (Views: 671.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/instructor/courses/3" for 10.0.2.2 at 2019-12-01 21:56:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Instructor::CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/instructor/courses_controller.rb:32
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/instructor/courses_controller.rb:25
+  Rendering instructor/courses/show.html.erb within layouts/application
+  Rendered instructor/courses/show.html.erb within layouts/application (15.8ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.4ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for #<ImageUploader:0x00007fc4c74e6a90>
+Did you mean?  to_xml):
+    22: <br />
+    23: <div class="booyah-box col-10 offset-1">
+    24:   <h1 class="text-center"><%= current_course.title %></h1>
+    25:   <%= image_tag current_course.image, class: 'img-fluid' %>
+    26: 
+    27:   <div class="text-center">
+    28:     <!-- Button trigger modal -->
+  
+app/views/instructor/courses/show.html.erb:25:in `_app_views_instructor_courses_show_html_erb___921894571454731868_70241567230040'
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 21:56:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.1ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 660ms (Views: 645.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/lessons/12" for 10.0.2.2 at 2019-12-01 21:56:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LessonsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:20
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT  "sections".* FROM "sections" WHERE "sections"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:13
+  [1m[36mCourse Load (0.0ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:13
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering lessons/show.html.erb within layouts/application
+  Rendered lessons/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 645ms (Views: 626.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses" for 10.0.2.2 at 2019-12-01 21:56:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:5
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/index.html.erb within layouts/application (5.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 610ms (Views: 593.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 21:56:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.6ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 617ms (Views: 586.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/lessons/12" for 10.0.2.2 at 2019-12-01 21:56:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by LessonsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mLesson Load (0.6ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:20
+  [1m[36mSection Load (0.8ms)[0m  [1m[34mSELECT  "sections".* FROM "sections" WHERE "sections"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:13
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:13
+  [1m[36mCourse Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering lessons/show.html.erb within layouts/application
+  Rendered lessons/show.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 730ms (Views: 686.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/lessons/12" for 10.0.2.2 at 2019-12-01 22:03:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by LessonsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT  "lessons".* FROM "lessons" WHERE "lessons"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:20
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT  "sections".* FROM "sections" WHERE "sections"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:13
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/lessons_controller.rb:13
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  Rendering lessons/show.html.erb within layouts/application
+  Rendered lessons/show.html.erb within layouts/application (1009.2ms)
+Completed 200 OK in 2326ms (Views: 2237.8ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/courses" for 10.0.2.2 at 2019-12-01 22:03:16 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#index as HTML
+  Rendering courses/index.html.erb within layouts/application
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/courses/index.html.erb:5
+  [1m[36mCourse Load (0.2ms)[0m  [1m[34mSELECT "courses".* FROM "courses"[0m
+  ↳ app/views/courses/index.html.erb:6
+  Rendered courses/index.html.erb within layouts/application (4.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:27
+Completed 200 OK in 615ms (Views: 599.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 22:03:18 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (1.2ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 640ms (Views: 611.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/instructor/courses/3" for 10.0.2.2 at 2019-12-01 22:03:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Instructor::CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /home/vagrant/.rbenv/versions/2.5.3/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mCourse Load (0.3ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/instructor/courses_controller.rb:33
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/instructor/courses_controller.rb:26
+  Rendering instructor/courses/show.html.erb within layouts/application
+  Rendered instructor/courses/show.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 1.3ms)
+
+
+  
+ActionView::Template::Error (Can't resolve image into URL: undefined method `to_model' for #<ImageUploader:0x00007fdc3354e1d0>
+Did you mean?  to_xml):
+    23: <br />
+    24: <div class="booyah-box col-10 offset-1">
+    25:   <h1 class="text-center"><%= current_course.title %></h1>
+    26:   <%= image_tag current_course.image, class: 'img-fluid' %>
+    27: 
+    28:   <div class="text-center">
+    29:     <!-- Button trigger modal -->
+  
+app/views/instructor/courses/show.html.erb:26:in `_app_views_instructor_courses_show_html_erb___1825772513342286890_70291866098520'
+Started GET "/courses/3" for 10.0.2.2 at 2019-12-01 22:03:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCourse Load (0.4ms)[0m  [1m[34mSELECT  "courses".* FROM "courses" WHERE "courses"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/courses_controller.rb:7
+  Rendering courses/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/courses/show.html.erb:13
+  [1m[36mCourse Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "courses" INNER JOIN "enrollments" ON "courses"."id" = "enrollments"."course_id" WHERE "enrollments"."user_id" = $1 AND "courses"."id" = $2 LIMIT $3[0m  [["user_id", 2], ["id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mSection Load (0.2ms)[0m  [1m[34mSELECT "sections".* FROM "sections" WHERE "sections"."course_id" = $1 ORDER BY "sections"."row_order" ASC[0m  [["course_id", 3]]
+  ↳ app/views/courses/show.html.erb:53
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 2]]
+  ↳ app/views/courses/show.html.erb:60
+  [1m[36mLesson Load (0.2ms)[0m  [1m[34mSELECT "lessons".* FROM "lessons" WHERE "lessons"."section_id" = $1 ORDER BY "lessons"."row_order" ASC[0m  [["section_id", 4]]
+  ↳ app/views/courses/show.html.erb:60
+  Rendered courses/show.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 670ms (Views: 653.2ms | ActiveRecord: 1.9ms)
+
+
