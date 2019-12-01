@@ -9,8 +9,8 @@
 # production:
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-AWS_ACCESS_KEY: "AKIAIJVXPBOMBZO3PFAQ"
-AWS_SECRET_KEY: "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"
+AWS_ACCESS_KEY: "AKIA5JSJFD4T6R4MHHPQ"
+AWS_SECRET_KEY: "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"
 AWS_BUCKET: "brettsflixter"
 AWS_REGION: "us-east-1"
 SECRET_KEY: "sk_test_SIIhwtJU1e6LXLDOVbnPtE6j00XzV9mxqJ"
