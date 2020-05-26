@@ -30,9 +30,15 @@
 
 ## Tools & Resources
 - [Ruby On Rails](https://rubyonrails.org/)
+
 - [PostgreSQL](https://www.postgresql.org/)
+
 -[bootstrap](https://getbootstrap.com/)
+
 -[Devise](https://github.com/heartcombo/devise)
+
 -[Carrierwave](https://github.com/carrierwaveuploader/carrierwave/)
+
 -[VideoJS](https://videojs.com/)
+
 -[JQuery:Sortable](https://jqueryui.com/sortable/)
